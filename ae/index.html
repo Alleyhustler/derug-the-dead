@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Æ</title>
+    <meta content="Æ" property="og:title">
+    <meta content="𝖆𝖘 𝖆𝖇𝖔𝖛𝖊, 𝖘𝖔 𝖇𝖊𝖑𝖔𝖜" property="og:description">
+    <meta content='https://wren.zone/a/i/angel.png' property='og:image'>
+    <link rel="stylesheet" href="../a/c/root.css">
+    <link rel="stylesheet" href="../a/c/style.css">
+    <link rel="stylesheet" href="../a/c/filter.css">
+    <link rel="icon" href="../a/i/eye.png" type="image/png">
+    <link rel="prefetch" href="bg.html" crossorigin>
+    <style>
+        #wallet-connect {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        #connect-btn {
+            background-color: #0a0a0a;
+            color: #c1c1c1;
+            border: 1px solid #444;
+            padding: 10px 18px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+            min-width: 140px;
+        }
+
+        #connect-btn:hover {
+            background-color: #111;
+            color: #eee;
+            border-color: #666;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        #connect-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
+        }
+
+        #connect-btn.connected {
+            color: #8aff80;
+            border-color: #8aff80;
+        }
+
+        #connect-btn.error {
+            color: #ff8080;
+            border-color: #ff8080;
+        }
+
+        .twitter-link {
+color: #c1c1c1;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: 10px 10px;
+    border: 1px solid #444;
+    align-content: center;
+    border-radius: 3px;
+    min-width: 140px;
+    background-color: rgba(10, 10, 10, 0.7);
+    transition: all 0.2s ease-in-out;
+        }
+
+        .twitter-link:hover {
+            color: #1DA1F2;
+            border-color: #1DA1F2;
+            background-color: rgba(29, 161, 242, 0.1);
+        }
+    </style>
+</head>
+
+<span class="background"></span>
+
+<body>
+    <div id="wallet-connect">
+        <button id="connect-btn">
+            Connect Wallet
+        </button>
+        <a href="https://x.com/Derugthedead" target="_blank" class="twitter-link">
+            @Derugthedead
+        </a>
+    </div>
+
+    <!-- Rest of your HTML content remains the same -->
+    <a class="desktop" data-tooltip="UP FOR A CHALLENGE?" href="online/index.html" style="margin-top: 1%;">
+        <img src="../a/i/eye.png">
+    </a>
+    <article>
+        <p class="mobile">Some pages are not available on mobile!<br><br>They are automatically hidden unless on desktop.</p>
+        <h1>Dead Zone</h1>
+        <ul>
+            <li>
+                <a data-tooltip="ENTER THE ÆTHER" href="ther/index.html">AETHER TREES FOR DERUG</a>
+            </li>
+            <li>
+                <a data-tooltip="AWAITING US IN THE PLEMORA" href="ons/index.html">DERUG</a>
+            </li>
+            <li>
+                <a data-tooltip="DO YOU FEEL THE FIRE?" href="divinitas/index.html">DIVINE STATEMENTS</a>
+            </li>
+            <li>
+                <a data-tooltip="I SEE HER BEAUTY!" href="../gallery/dcim/index.html">DCIM</a>
+            </li>
+        </ul>
+        <h1>Apostles Calls</h1>
+        <ul>
+            <li>
+                <a data-tooltip="🦞 🔜" href="https://omni.vi/" target="_blank">OMNI-VIBORNE</a>
+            </li>
+            <li>
+                <a data-tooltip="A DRIFTING COSMONAUT" href="https://kry.pt/" target="_blank">KRY!PT</a>
+            </li>
+            <li>
+                <a data-tooltip="CAN DOUBLE JUMP" href="https://psychicnewborn.neocities.org/"
+                    target="_blank">PSYC@NBWN</a>
+            </li>
+        </ul>
+    </article>
+    <footer>2025-20XX ~ CALLS</footer>
+    <script type="module">
+        import { Connection, clusterApiUrl, PublicKey } from "https://cdn.jsdelivr.net/npm/@solana/web3.js/+esm";
+
+        const connectButton = document.getElementById('connect-btn');
+        let isConnected = false;
+
+        // Check if wallet is already connected
+        const checkWalletConnection = async () => {
+            if ('solana' in window) {
+                const provider = window.solana;
+                try {
+                    // Check if already connected
+                    if (provider.isConnected) {
+                        const publicKey = provider.publicKey.toString();
+                        connectButton.textContent = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
+                        connectButton.classList.add('connected');
+                        isConnected = true;
+                    }
+                } catch (err) {
+                    console.error('Connection check failed:', err);
+                }
+            }
+        };
+
+        // Connect/disconnect wallet
+        const toggleWalletConnection = async () => {
+            if (!('solana' in window)) {
+                connectButton.textContent = 'No Wallet';
+                connectButton.classList.add('error');
+                setTimeout(() => {
+                    connectButton.textContent = 'Connect Wallet';
+                    connectButton.classList.remove('error');
+                }, 2000);
+                return;
+            }
+
+            const provider = window.solana;
+
+            try {
+                if (!isConnected) {
+                    const resp = await provider.connect();
+                    const walletAddress = resp.publicKey.toString();
+                    connectButton.textContent = `${walletAddress.slice(0, 4)}...${walletAddress.slice(-4)}`;
+                    connectButton.classList.add('connected');
+                    isConnected = true;
+                    
+                    // Listen for disconnect
+                    provider.on('disconnect', () => {
+                        connectButton.textContent = 'Connect Wallet';
+                        connectButton.classList.remove('connected');
+                        isConnected = false;
+                    });
+                } else {
+                    await provider.disconnect();
+                    connectButton.textContent = 'Connect Wallet';
+                    connectButton.classList.remove('connected');
+                    isConnected = false;
+                }
+            } catch (err) {
+                console.error('Wallet error:', err);
+                connectButton.textContent = 'Error';
+                connectButton.classList.add('error');
+                setTimeout(() => {
+                    connectButton.textContent = isConnected ? 
+                        connectButton.textContent : 'Connect Wallet';
+                    connectButton.classList.remove('error');
+                }, 2000);
+            }
+        };
+
+        // Initialize
+        checkWalletConnection();
+        connectButton.addEventListener('click', toggleWalletConnection);
+    </script>
+    <script src="../a/s/tooltip.js"></script>
+    <script src="../a/s/sound.js"></script>
+    <script src="../a/s/header.js"></script>
+    <script src="../a/s/transition.js"></script>
+</body>
+
+</html>

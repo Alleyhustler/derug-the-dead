@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+  <title>wren.zone</title>
+  <link>https://wren.zone/</link>
+  <description>Updates from wren.zone</description>
+    <item>
+    <title>Aeons</title>
+    <link>http://wren.zone/ae/ons/</link>
+    <guid isPermaLink="true">https://wren.zone/ae/log/#3</guid>
+    <pubDate>Tue, 1 April 2025 12:31:00 CST</pubDate>
+    <dc:creator>adm@wren.zone</dc:creator>
+    <description><![CDATA[
+      <p>Created <a href="https://wren.zone/ae/ons/">Aeons</a> page & fixes</p>
+    ]]></description>
+  </item>
+  <item>
+    <title>Garden</title>
+    <link>http://wren.zone/ae/garden/</link>
+    <guid isPermaLink="true">https://wren.zone/ae/log/#2</guid>
+    <pubDate>Mon, 24 Mar 2025 5:22:00 CST</pubDate>
+    <dc:creator>adm@wren.zone</dc:creator>
+    <description><![CDATA[
+      <p>Created <a href="https://wren.zone/ae/garden/">Garden</a> page & re-organized links</p>
+    ]]></description>
+  </item>
+  <item>
+    <title>RSS Feed</title>
+    <link>http://wren.zone/ae/log/#1</link>
+    <guid isPermaLink="true">https://wren.zone/ae/log/#1</guid>
+    <pubDate>Wed, 19 Mar 2025 2:36:00 CST</pubDate>
+    <dc:creator>adm@wren.zone</dc:creator>
+    <description><![CDATA[
+      <p>Created RSS Feed & Released wren.zone</p>
+    ]]></description>
+  </item>
+
+</channel>
+
+</rss>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from wren.zone/ae/card/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 16:30:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD</title>
+    <meta content="CARD" property="og:title">
+    <meta content="𝖆𝖘 𝖆𝖇𝖔𝖛𝖊, 𝖘𝖔 𝖇𝖊𝖑𝖔𝖜" property="og:description">
+    <meta content='https://wren.zone/a/i/angel.png' property='og:image'>
+    <link rel="stylesheet" href="../../a/c/root.css">
+    <link rel="stylesheet" href="../../a/c/style.css">
+    <link rel="stylesheet" href="../../a/c/filter.css">
+    <link rel="icon" href="../../a/i/eye.png" type="image/png">
+</head>
+
+<span class="background"></span>
+
+<style>
+    * {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    article {
+        *{
+            margin: .4em;
+        }
+        width: 35vw !important;
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+
+        img {
+            margin: 1em;
+        }
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1em;
+        background-image: url('banner.png');
+        border-bottom: 3px solid var(--a);
+        background-size: 200% 200%;
+        background-position: 0% 60%;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .music-status {
+        display: flex;
+        border: 3px solid var(--a);
+        width: 35vw !important;
+        background-color: var(--bg2);
+        overflow-x: auto;
+        overflow-y: hidden;
+        font-size: .7em;
+
+        * {
+            border: 3px solid var(--a);
+            margin: 1em;
+        }
+    }
+
+    /* mobile */
+    @media (max-width: 900px) {
+        *{
+            overflow: hidden;
+        }
+        article{
+            display: block;
+            text-align: center !important;
+        }
+    }
+</style>
+
+<body>
+    <article id="desc">
+        <section>
+            <img src="pfp.png" style="border-radius: 100%; width: 30%; border: 6px solid black;">
+        </section>
+        <marquee onmouseover="this.stop();" onmouseout="this.start();">
+            dæmonic creature ▪ 
+            programmer ▪ 
+            call me mk the way i be ultra in my opp's heads ▪ 
+            The Slop King vs The Soy Aristocracy ▪ 
+            dæmontarian ▪ 
+            i am literally making my magnum opus rn ▪ 
+            me when i see a fucking Canaanite ▪ 
+            i bet god looks like a tardigrade ▪ 
+            forgive me father for I have larped ▪ 
+            Romantic software running on Germanic hardware with a Greek transpiler ▪ 
+            MOLT AD INFINITUM ▪ 
+            corposlop by day larpslop by night ▪ 
+            the slop has fallen millions must larp ▪ 
+        </marquee>
+        <h1>Wren - Warren</h1>
+        <p>
+            Cyber Witch
+            <br><br>
+            Hobbyist Programmer
+        </p>
+        <h1>The Zone</h1>
+        <p>
+            An ever changing journal.
+        </p>
+        <h1>Contact</h1>
+        <p><a href="../../cdn-cgi/l/email-protection.html#5d3c39301d2a2f38337327323338"><span class="__cf_email__" data-cfemail="fd9c9990bd8a8f9893d387929398">[email&#160;protected]</span></a></p>
+        <a href="../../index.html"><img src="../../a/i/wren.gif"></a>
+    </article>
+    <footer>2025-20XX ~ WREN</footer>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+    // shamelessly taken from https://omni.vi/card/
+    const user = 'dahkohtah'
+    const url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
+    (async () => {
+        const d = await fetch(url);
+        const json = await d.json()
+        console.log(d, json);
+        const ima = document.getElementById('desc');
+        let musicstatus = document.createElement('a')
+        musicstatus.className = 'music-status desktop'
+        musicstatus.href = 'https://www.last.fm/user/' + user
+        musicstatus.innerText = `${json.track['@attr'] && json.track['@attr']['nowplaying'] ? 'Currently' : 'Was last'} listening to ${json.track.name} by ${json.track['artist']['#text']}`
+        ima.after(musicstatus)
+
+        let cover = document.createElement('img')   
+        cover.src = json.track.image[1]['#text']
+        musicstatus.prepend(cover);
+    })()
+</script>
+<script src="../../a/s/tooltip.js"></script>
+<script src="../../a/s/sound.js"></script>
+<script src="../../a/s/header.js"></script>
+
+
+<!-- Mirrored from wren.zone/ae/card/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jun 2025 16:30:06 GMT -->
+</html>
